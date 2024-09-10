@@ -14,7 +14,7 @@ registerLocaleData(localEsCL);
 @NgModule({
   declarations: [
     AppComponent,
-  ],
+    ],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
