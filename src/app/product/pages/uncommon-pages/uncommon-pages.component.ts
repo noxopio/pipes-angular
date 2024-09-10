@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { interval, Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-uncommon-pages',
@@ -21,15 +22,34 @@ export class UncommonPagesComponent {
 
   //i18 plural pipe
   public clients: string[] = ['Maria', 'Pedro', 'Fernando', 'Hernando', 'Eduardo', 'Melisa ', 'Natalia']
-  public clientsMap={
+  public clientsMap = {
     '=0 ': 'no tenemos clientes esperando.',
-    '=1':'tenemos un cliente esperando ',
+    '=1': 'tenemos un cliente esperando ',
     '=2': 'tenemos 2 esperando.',
     'other': 'tenemos # clientes esperando'
   }
-   deleteClient(): void {
+  deleteClient(): void {
     this.clients.shift()
   }
+
+  // KeyValue pipe
+  public person = {
+    name: 'Fernando',
+    age: 35,
+    address: 'Calle 123	'
+  }
+// async pipe
+
+  public myobservableTimer:Observable <number> =interval(1000).pipe(
+    tap(value=>console.log('tap',value))
+  )
+// promesa async pipe
+public promiseValue: Promise<string>=new Promise((resolve,reject)=>{
+  setTimeout(()=>{
+    resolve('Tenemos data de promesa')
+  },3500)
+})
+
 
 
 
