@@ -1,0 +1,32 @@
+<p-panel header="Pipes Personalizados" class="p-1">
+  <p>Pipes Personalizados- creados por {{'nosotros' | toggleCase:isUpperCase}}</p>
+</p-panel>
+<p-toolbar>
+
+  <div class="p-tooltbar-group-start">
+    <p-button
+    label="ToogleCase"
+    icon="pi pi-search"
+    (click)="toggleUpperCase()"
+    />
+  </div>
+
+  <div class="p-toolbar-group-end">
+    <p-button   class="mr-2"
+     label="Por nombre"
+      icon="pi pi-sort"
+       styleClass="p-button-success" />
+    <p-button   class="mr-2"
+     label="Por valor"
+     icon="pi pi-sort"
+     styleClass="p-button-danger" />
+    <p-button   class="mr-2"
+     label="Por color"
+     icon="pi pi-sort"
+     styleClass="p-button-help" />
+  </div>
+
+  <div class="p-toolbar-group-center">
+
+  </div>
+</p-toolbar>
