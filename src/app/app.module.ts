@@ -13,18 +13,18 @@ import { registerLocaleData } from '@angular/common';
 registerLocaleData(localEsCL);
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    BrowserModule,
     ButtonModule,
     SharedModule,
-    BrowserAnimationsModule
-],
+  ],
   providers: [
 
-   { provide: LOCALE_ID, useValue: 'es-CL'}
+    { provide: LOCALE_ID, useValue: 'es-CL' }
   ],
   bootstrap: [AppComponent]
 })
